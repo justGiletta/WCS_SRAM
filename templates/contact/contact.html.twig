@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Compte{% endblock %}
+
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
+
+{% block body %}
+<h1 class="text-center mb-5">contact</h1>
+<div class="container-lg">
+    <form>
+        <div class="mb-3 fs-3 text-white">
+            <label for="name" class="form-label">Nom</label>
+            <input type="password" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3 fs-3 text-white">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input type="password" class="form-control" id="prenom" name="prenom">
+        </div>
+        <div class="mb-3 fs-3 text-white">
+            <label for="email" class="form-label">Mail</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+        </div>
+        <div class="mb-3 fs-3 text-white">
+            <label for="message" class="form-label">Message</label>
+            <textarea type="text" class="form-control" id="message" name="message"
+                aria-describedby="emailHelp"></textarea>
+        </div>
+        <div class="text-center m-5"><button type="submit" class="btn btn-warning fs-4">envoyer</button></div>
+    </form>
+</div>
+{% endblock %}
