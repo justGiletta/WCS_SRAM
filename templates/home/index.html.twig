@@ -6,31 +6,36 @@
     <div class="home">
         <div class="row d-flex text-center mt-3">
             <div class="col">
-                <img src="../build/images/planetunit4.png">
-                <p class="lh-1">Contact</p>
+                <a href="" class="text-reset"><img src="../build/images/planetunit4.png">
+                <p class="lh-1">Contact</p></a>
             </div>
         </div>
         <div class="row d-flex text-center">
             <div class="col align-self-center">
-                <img src="../build/images/planetunit0.png">
-                <p class="lh-1">S'enregistrer</p>
+                <a href="/register" class="text-reset"><img src="../build/images/planetunit0.png">
+                <p class="lh-1">S'enregistrer</p></a>
             </div>
             <div class="col align-self-center">
-                <img src="../build/images/planetunit1.png">
-                <p class="lh-1">Agenda</p>
+                <a href="/sortie" class="text-reset"><img src="../build/images/planetunit1.png">
+                <p class="lh-1">Agenda</p></a>
             </div>
         </div>
         <div class="row d-flex text-center">
             <div class="col align-self-center">
-                <img src="../build/images/planetunit13.png">
-                <p class="lh-1">Se connecter</p>
+                <a href="/login" class="text-reset"><img src="../build/images/planetunit13.png">
+                <p class="lh-1">Se connecter</p></a>
             </div>
             <div class="col">
                 <img src="../build/images/LOGO.png" style="max-width: 80%">
             </div>
             <div class="col align-self-center">
-                <img src="../build/images/planetunit2.png">
-                <p class="lh-1">Mon compte</p>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="/user/{{ app.user.id }}" class="text-reset"><img src="../build/images/planetunit2.png">
+                <p class="lh-1">Mon compte</p></a>
+                {% else %}
+                <a href="/login" class="text-reset"><img src="../build/images/planetunit2.png">
+                <p class="lh-1">Mon compte</p></a>
+                {% endif %}
             </div>
         </div>
         <div class="row d-flex text-center mt-2 mb-3">
@@ -39,8 +44,8 @@
                 <p class="lh-1">Vos plus belles photos</p>
             </div>
             <div class="col">
-                <img src="../build/images/planetunit13.png">
-                <p class="lh-1">La commu'</p>
+                <a href="/user" class="text-reset"><img src="../build/images/planetunit13.png">
+                <p class="lh-1">La commu'</p></a>
             </div>
         </div>
     </div>
