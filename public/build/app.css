@@ -1,13 +1,21 @@
 body {
-    background-image: url('../build/images/fond.png');
-    font-family: 'Concert One', cursive;
+  background-image: url("../build/images/fond.png");
+  font-family: "Concert One", cursive;
 }
 
-h1, h2 {
-    font-family: 'Fascinate', cursive;
-    color: white;
+h1 {
+  font-family: "Fascinate", cursive;
+  color: white;
 }
 
-table, td, a, th, p {
-    color: white;
+table,
+td,
+a,
+th {
+  color: white;
+}
+
+p {
+  color: white;
+>>>>>>> 8f4eeb8eaad58d3e780a10d01a33c571c70e1680
 }

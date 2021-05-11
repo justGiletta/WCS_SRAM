@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} SRAM {% endblock %}
+
+{% block body %}
+    <div class="home">
+        <div class="row d-flex text-center mt-3">
+            <div class="col">
+                <a href="" class="text-reset"><img src="../build/images/planetunit4.png">
+                <p class="lh-1">Contact</p></a>
+            </div>
+        </div>
+        <div class="row d-flex text-center">
+            <div class="col align-self-center">
+                <a href="/register" class="text-reset"><img src="../build/images/planetunit0.png">
+                <p class="lh-1">S'enregistrer</p></a>
+            </div>
+            <div class="col align-self-center">
+                <a href="/sortie" class="text-reset"><img src="../build/images/planetunit1.png">
+                <p class="lh-1">Agenda</p></a>
+            </div>
+        </div>
+        <div class="row d-flex text-center">
+            <div class="col align-self-center">
+                <a href="/login" class="text-reset"><img src="../build/images/planetunit13.png">
+                <p class="lh-1">Se connecter</p></a>
+            </div>
+            <div class="col">
+                <img src="../build/images/LOGO.png" style="max-width: 80%">
+            </div>
+            <div class="col align-self-center">
+                <a href="/user/{id}" class="text-reset"><img src="../build/images/planetunit2.png">
+                <p class="lh-1">Mon compte</p></a>
+            </div>
+        </div>
+        <div class="row d-flex text-center mt-2 mb-3">
+            <div class="col">
+                <img src="../build/images/planetunit11.png">
+                <p class="lh-1">Vos plus belles photos</p>
+            </div>
+            <div class="col">
+                <a href="/user" class="text-reset"><img src="../build/images/planetunit13.png">
+                <p class="lh-1">La commu'</p></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
