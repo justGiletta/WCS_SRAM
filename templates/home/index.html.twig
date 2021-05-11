@@ -29,8 +29,13 @@
                 <img src="../build/images/LOGO.png" style="max-width: 80%">
             </div>
             <div class="col align-self-center">
-                <a href="/user/{id}" class="text-reset"><img src="../build/images/planetunit2.png">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="/user/{{ app.user.id }}" class="text-reset"><img src="../build/images/planetunit2.png">
                 <p class="lh-1">Mon compte</p></a>
+                {% else %}
+                <a href="/login" class="text-reset"><img src="../build/images/planetunit2.png">
+                <p class="lh-1">Mon compte</p></a>
+                {% endif %}
             </div>
         </div>
         <div class="row d-flex text-center mt-2 mb-3">
