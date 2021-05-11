@@ -1,3 +1,14 @@
 body {
     background-color: lightgray;
 }
+
+h1{
+    color: red;
+}
+.time {
+    display: inline-flex;
+    color: red;
+}
+.card {
+    background-color: red;
+}
