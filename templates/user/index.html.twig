@@ -2,44 +2,37 @@
 
 {% block title %}Mon Compte{% endblock %}
 
-{% block body %}
-    <h1>User index</h1>
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
 
-<div class="container mt-8">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Adress</th>
-                <th>Password</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.name }}</td>
-                <td>{{ user.adress }}</td>
-                <td>{{ user.password }}</td>
-                <td>{{ user.phone }}</td>
-                <td>{{ user.email }}</td>
-                <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
+{% block body %}
+<h1 class="text-center mb-5">la commu'</h1>
+<div class="container-lg d-flex mt-5">
+    <div class="container d-flex justify-content-around align-items-center mt-5">
+        <div><img src="../build/images/extra0.png" width="200px" height="150px"></div>
+        <div><img src="../build/images/extra1.png" width="200px" height="150px"></div>
+        <div><img src="../build/images/extra2.png" width="200px" height="150px"></div>
+    </div>
+</div>
+<div class="container-lg d-flex"></div>
+<div class="container d-flex justify-content-around align-items-center m-3">
+        {% for i in 0..2 %}
+        <div class="mb-3 fs-3 text-white"><p>{{ users[i].name }}</p></div>
         {% endfor %}
-        </tbody>
-    </table>
-    <a href="{{ path('user_new') }}">Create new</a>
+    </div>
+</div>
+<div class="container-lg d-flex mt-5">
+    <div class="container d-flex justify-content-around align-items-center mt-5">
+        <div><img src="../build/images/extra3.png" width="200px" height="150px"></div>
+        <div><img src="../build/images/extra4.png" width="200px" height="150px"></div>
+        <div><img src="../build/images/extra5.png" width="200px" height="150px"></div>
+    </div>
+</div>
+<div class="container-lg d-flex"></div>
+<div class="container d-flex justify-content-around align-items-center mt-3">
+        {% for i in 3..5 %}
+        <div class="mb-3 fs-3 text-white"><p>{{ users[i].name }}</p></div>
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock %}
