@@ -1,4 +1,9 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="text-center" style="text-color-white">
+        {{ form_label(form) }}
+    </div>
+    <div>
+        {{ form_widget(form) }}
+    </div>
+    <button type="button" class="btn btn-light">{{ button_label|default('Organiser') }}</button>
 {{ form_end(form) }}

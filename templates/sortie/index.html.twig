@@ -1,45 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sortie index{% endblock %}
+{% block title %}Agenda{% endblock %}
+
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
 
 {% block body %}
-    <h1>Sortie index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Place</th>
-                <th>Date</th>
-                <th>Description</th>
-                <th>ParticipantMax</th>
-                <th>Organisator</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for sortie in sorties %}
-            <tr>
-                <td>{{ sortie.id }}</td>
-                <td>{{ sortie.name }}</td>
-                <td>{{ sortie.place }}</td>
-                <td>{{ sortie.date ? sortie.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ sortie.description }}</td>
-                <td>{{ sortie.participantMax }}</td>
-                <td>{{ sortie.organisator }}</td>
-                <td>
-                    <a href="{{ path('sortie_show', {'id': sortie.id}) }}">show</a>
-                    <a href="{{ path('sortie_edit', {'id': sortie.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('sortie_new') }}">Create new</a>
+    <h1 class="text-center mb-5">Agenda des sorties</h1>
+    {% for sortie in sorties %}
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ sortie.name }}</h5>
+                <p class="card-text">{{ sortie.description }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ sortie.date ? sortie.date|date('Y-m-d H:i:s') : '' }}</li>
+                <li class="list-group-item">{{ sortie.place }}</li>
+                <li class="list-group-item">{{ sortie.participantMax }}</li>
+                <li class="list-group-item">{{ sortie.organisator }}</li>
+            </ul>
+            <div class="card-body">
+                <a href="{{ path('sortie_show', {'id': sortie.id}) }}">Détails</a>
+                <a href="{{ path('sortie_edit', {'id': sortie.id}) }}">Modifier</a>
+            </div>
+        </div>
+    {% else %}
+        <p>Il n'y a aucune sortie organisée pour le moment.</p>
+    {% endfor %}
+    <div class="d-flex justify-content-end mt-5">
+        <a href="{{ path('sortie_new')}}"><button type="button" class="btn btn-warning">Organiser une sortie</button></a>
+    </div>
 {% endblock %}

@@ -1,11 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Sortie{% endblock %}
+{% block title %}Créer une sortie{% endblock %}
+
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
 
 {% block body %}
-    <h1>Create new Sortie</h1>
+    <h1 class="text-center">Organiser une nouvelle sortie</h1>
+    <div class="d-flex justify-content-center mt-5">
+        {{ include('sortie/_form.html.twig') }}
+    </div>
 
-    {{ include('sortie/_form.html.twig') }}
-
-    <a href="{{ path('sortie_index') }}">back to list</a>
+    <div class="d-flex justify-content-end mt-5">
+        <a href="{{ path('sortie_index') }}"><button type="button" class="btn btn-warning">Revenir à l'agenda</button></a>
+    </div>
 {% endblock %}
