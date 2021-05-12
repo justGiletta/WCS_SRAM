@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
-use App\Form\UserType;
-use App\Repository\UserRepository;
+use App\Entity\Contact;
+use App\Form\ContactType;
+use App\Repository\ContactRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,11 +18,44 @@ class ContactController extends AbstractController
     /**
      * @Route("/", name="contact_index", methods={"GET"})
      */
-    public function index(): Response
+    public function index(ContactRepository $contactRepository): Response
     {
+        return $this->render('contact/index.html.twig', [
+            'contacts' => $contactRepository->findAll(),
+        ]);
+    }
 
-        return $this->render('contact/contact.html.twig', [
-            'controller_name' => 'ContactController',
+    /**
+     * @Route("/new", name="contact_new", methods={"GET","POST"})
+     */
+    public function new(Request $request): Response
+    {
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($contact);
+            $entityManager->flush();
+            
+            return $this->redirectToRoute('home');
+        }
+        
+        echo "<script>widows.confirm('Votre message à été envoyé');</script>";
+        return $this->render('contact/new.html.twig', [
+            'contact' => $contact,
+            'form' => $form->createView(),
+            ]);
+    }
+
+    /**
+     * @Route("/{id}", name="contact_show", methods={"GET"})
+     */
+    public function show(Contact $contact): Response
+    {
+        return $this->render('contact/show.html.twig', [
+            'contact' => $contact,
         ]);
     }
 }
