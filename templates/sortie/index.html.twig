@@ -6,6 +6,9 @@
 
 {% block body %}
     <h1 class="text-center mb-5">Agenda des sorties</h1>
+    <div class="d-flex justify-content-center mt-3 mb-5">
+        <a href="{{ path('sortie_new')}}"><button type="button" class="btn btn-secondary">Organiser une sortie</button></a>
+    </div>
     <div class="row row-col-4">
         {% for sortie in sorties %}
             <div class="col d-flex justify-content-center">
@@ -27,8 +30,5 @@
                 </div>
             </div>
         {% endfor %}
-    </div>
-    <div class="d-flex justify-content-end mt-3 mb-5">
-        <a href="{{ path('sortie_new')}}"><button type="button" class="btn btn-warning">Organiser une sortie</button></a>
     </div>
 {% endblock %}

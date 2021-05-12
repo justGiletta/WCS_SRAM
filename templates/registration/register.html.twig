@@ -20,7 +20,7 @@
         </div>
         <div class="form-widget">
             {{ form_widget(registrationForm.email) }}
-        </div>       
+        </div>
         <div class="form-label">
             {{ form_label(registrationForm.name) }}
         </div>
@@ -38,7 +38,7 @@
         </div>
         <div class="form-widget">
             {{ form_widget(registrationForm.phone) }}
-        </div> 
+        </div>
         <div class="form-label">
             {{ form_label(registrationForm.plainPassword) }}
         </div>
@@ -54,13 +54,12 @@
             </div>
             <div class="col-1">
                 {{ form_widget(registrationForm.agreeTerms) }}
-            </div> 
-        </div> 
+            </div>
+        </div>
         <div class="text-center m-5">
-            <button type="submit" class="btn btn-secondary text-white fs-4">Register</button>
+            <button type="submit" class="btn btn-warning fs-4">Register</button>
         </div>
         </form>
 </div>
     {{ form_end(registrationForm) }}
-    
 {% endblock %}
