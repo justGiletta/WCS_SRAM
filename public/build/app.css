@@ -47,3 +47,7 @@ h5 {
 .email-Mess {
     font-style: italic;
 }
+
+.planet p:hover {
+    color: rgb(69, 189, 236);
+}
