@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agenda{% endblock %}
+
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mb-5">Messages</h1>
+    <div class="d-flex justify-content-center mt-3 mb-5">
+        <a href="{{ path('contact_new')}}"><button type="button" class="btn btn-dark justify-content-end">Envoyer un message</button></a>
+    </div>
+    <div class="row row-col-4">
+        {% for contact in contacts %}
+            <div class="col d-flex" id="talkbubble">
+                <div class="card mb-5" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ contact.firstname }} {{ contact.lastname }}</h5>
+                        <div class="card-text">( {{ contact.email }} )</div>
+                        <br>
+                        <div class="card-text">{{ contact.message }}</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

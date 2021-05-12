@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sortie {{ sortie.name }} {% endblock %}
+
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Sortie {{ sortie.name }}</h1>
+    <div class="container text-center">
+        <img src="../build/images/evemars5.png" class="card-img-top pt-3 pb-3" alt="...">
+        <div><p class="fs-4">Date : {{ sortie.date ? sortie.date|date('Y-m-d H:i:s') : '' }}</p></div>
+        <div><p class="fs-4">Lieu : {{ sortie.place }}</p></div>
+        <div><p class="fs-4">Participants : {{ sortie.participantMax }}</p></div>
+        <div><p class="fs-4">Organisateur : {{ sortie.organisator }}</p></div>
+    </div>
+    <div class="d-flex justify-content-center mt-5 mb-5">
+        <a href="/login"><button type="button" class="btn btn-secondary">S'inscrire</button></a>
+    </div>
+{% endblock %}

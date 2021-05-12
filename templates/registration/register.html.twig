@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <h1 class="text-center">Register</h1>
+
+    {{ form_start(registrationForm) }}
+    <div class="container-lg">
+    <form>
+    <div class="mb-4 fs-4 text-white text-center">
+        <div class="form-label">
+            {{ form_label(registrationForm.email) }}
+        </div>
+        <div class="form-widget">
+            {{ form_widget(registrationForm.email) }}
+        </div>
+        <div class="form-label">
+            {{ form_label(registrationForm.name) }}
+        </div>
+        <div class="form-widget">
+            {{ form_widget(registrationForm.name) }}
+        </div> 
+        <div class="form-label">
+            {{ form_label(registrationForm.adress) }}
+        </div>
+        <div class="form-widget">
+            {{ form_widget(registrationForm.adress) }}
+        </div>
+        <div class="form-label">
+            {{ form_label(registrationForm.phone) }}
+        </div>
+        <div class="form-widget">
+            {{ form_widget(registrationForm.phone) }}
+        </div>
+        <div class="form-label">
+            {{ form_label(registrationForm.plainPassword) }}
+        </div>
+        <div class="form-widget">
+            {{ form_widget(registrationForm.plainPassword, {
+            label: 'Password'
+        })  }}
+        </div>
+        <br>
+        <div class="row justify-content-md-center g-0">
+            <div class="col-2">
+                {{ form_label(registrationForm.agreeTerms) }}
+            </div>
+            <div class="col-1">
+                {{ form_widget(registrationForm.agreeTerms) }}
+            </div>
+        </div>
+        <div class="text-center m-5">
+            <button type="submit" class="btn btn-warning fs-4">Register</button>
+        </div>
+        </form>
+</div>
+    {{ form_end(registrationForm) }}
+{% endblock %}

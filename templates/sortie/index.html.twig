@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agenda{% endblock %}
+
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mb-5">Agenda des sorties</h1>
+    <div class="d-flex justify-content-center mt-3 mb-5">
+        <a href="{{ path('sortie_new')}}"><button type="button" class="btn btn-secondary">Organiser une sortie</button></a>
+    </div>
+    <div class="row row-col-4">
+        {% for sortie in sorties %}
+            <div class="col d-flex justify-content-center">
+                <div class="card mb-5" style="width: 18rem;">
+                    <img src="../build/images/evemars5.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ sortie.name }}</h5>
+                        <div class="card-text">{{ sortie.description }}</div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Date : {{ sortie.date ? sortie.date|date('Y-m-d H:i:s') : '' }}</li>
+                        <li class="list-group-item">Lieu : {{ sortie.place }}</li>
+                        <li class="list-group-item">Participants : {{ sortie.participantMax }}</li>
+                        <li class="list-group-item">Organisateur : {{ sortie.organisator }}</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="{{ path('sortie_show', {'id': sortie.id}) }}"><button class="btn btn-outline-secondary">Détails</button></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Compte{% endblock %}
+
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
+
+{% block body %}
+<h1 class="text-center mb-5">mon compte</h1>
+
+<div class="text-center mb-5"><a href="{{ path('app_logout') }}" type="button" class="btn btn-warning fs-4">se déconnecter</a></div>
+
+<h2 class="m-3">mes sorties</h2>
+<div class="container-lg mt-5">
+    <div class="row row-4">
+        <div class="col d-flex justify-content-center">
+            <div class="card mb-5" style="width: 18rem;">
+                <img src="../build/images/evemars5.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Urbex</h5>
+                    <div class="card-text">Visiter Mars, derrière à droite et découvrir les lieux oubliés de notre belle planète.</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Date : 2021-01-01 17:00:00</li>
+                    <li class="list-group-item">Lieu : Mars, derrière à droite</li>
+                    <li class="list-group-item">Participants : 24</li>
+                    <li class="list-group-item">Organisateur : Giselle</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <div class="card mb-5" style="width: 18rem;">
+                <img src="../build/images/evemars5.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Au clair de Jupiter</h5>
+                    <div class="card-text">Observer le lever de Jupiter depuis un point de vue tout à fait très bien.</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Date : 2021-05-13 06:00:00</li>
+                    <li class="list-group-item">Lieu : Placeholder 234.123</li>
+                    <li class="list-group-item">Participants : 30</li>
+                    <li class="list-group-item">Organisateur : Gilou</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <div class="card mb-5" style="width: 18rem;">
+                <img src="../build/images/evemars5.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Running dans les dunes</h5>
+                    <div class="card-text">Au petit matin, rien de tel qu'un bon running dans les dunes. Et à plusieurs, c'est mieux.</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Date : 2022-08-11 08:00:00</li>
+                    <li class="list-group-item">Lieu : Amas de dunes 165.34</li>
+                    <li class="list-group-item">Participants : 35</li>
+                    <li class="list-group-item">Organisateur : Vendor</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end mt-3 mb-5"><a href="{{ path('sortie_new') }}" class="btn btn-secondary fs-4">créer une sortie</a></div>
+    <h2 class="m-3">mes amis</h2>
+    <div class="container d-flex justify-content-around mt-5">
+        <div><img src="../build/images/extra4.png" width="200px" height="150px"></div>
+        <div><img src="../build/images/extra2.png" width="200px" height="150px"></div>
+        <div><img src="../build/images/extra3.png" width="200px" height="150px"></div>
+    </div>
+    <div class="container d-flex justify-content-around mt-5 mb-5">
+        <div class="fs-3 text-white"><p>Gillou</p></div>
+        <div class="fs-3 text-white"><p>JeanMi</p></div>
+        <div class="fs-3 .text-white"><p>Vendor</p></div>
+    </div>
+</div>
+
+{% endblock %}
+
