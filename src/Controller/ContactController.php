@@ -39,7 +39,7 @@ class ContactController extends AbstractController
             $entityManager->persist($contact);
             $entityManager->flush();
             
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('contact_index');
         }
         
         echo "<script>widows.confirm('Votre message à été envoyé');</script>";
