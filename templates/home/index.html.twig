@@ -5,30 +5,31 @@
 {% block body %}
     <div class="home">
         <div class="row d-flex text-center mt-3">
-            <div class="col">
+            <div class="planet col">
                 <a href="/contact" class="text-reset"><img src="../build/images/planetunit4.png">
                 <p class="lh-1">Messages</p></a>
             </div>
         </div>
         <div class="row d-flex text-center">
-            <div class="col align-self-center">
+            <div class="planet col align-self-center">
                 <a href="/register" class="text-reset"><img src="../build/images/planetunit0.png">
                 <p class="lh-1">S'enregistrer</p></a>
             </div>
-            <div class="col align-self-center">
+            <div class="planet col align-self-center">
                 <a href="/sortie" class="text-reset"><img src="../build/images/planetunit1.png">
                 <p class="lh-1">Agenda</p></a>
             </div>
         </div>
         <div class="row d-flex text-center">
-            <div class="col align-self-center">
+            <div class="planet col align-self-center">
                 <a href="/login" class="text-reset"><img src="../build/images/planetunit13.png">
                 <p class="lh-1">Se connecter</p></a>
             </div>
             <div class="col">
-                <img src="../build/images/LOGO.png" style="max-width: 80%">
+                <a href="/cocktail" class="text-reset">
+                    <img src="../build/images/LOGO.png" style="max-width: 80%"></a>
             </div>
-            <div class="col align-self-center">
+            <div class="planet col align-self-center">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <a href="/user/{{ app.user.id }}" class="text-reset"><img src="../build/images/planetunit2.png">
                 <p class="lh-1">Mon compte</p></a>
@@ -39,12 +40,12 @@
             </div>
         </div>
         <div class="row d-flex text-center mt-2 mb-3">
-            <div class="col">
+            <div class="planet col">
                 <a href="/time" class="text-reset"><img src="../build/images/planetunit11.png">
                 <p class="lh-1">Vos plus belles photos</p></a>
             </div>
-            <div class="col">
-                <a href="/user" class="text-reset"><img src="../build/images/planetunit13.png">
+            <div class="planet col">
+                <a href="/user" class="text-reset"><img src="../build/images/planetunit3.png">
                 <p class="lh-1">La commu'</p></a>
             </div>
         </div>

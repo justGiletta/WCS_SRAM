@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}COCKTAIL RANDOM{% endblock %}
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Cocktail random</h1><br>
+    <div class="text-center">
+    <a href="/cocktail" class="btn btn-dark fs-4 text-center">Rafraichir</a></div><br>
+    <div class="card mb-5">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img class="card-img-top" src="{{ cocktail.drinks[0].strDrinkThumb }}" alt="Card image cap">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title text-center" style="font-size: 50px;">{{ cocktail.drinks[0].strDrink }}</h3>
+                    <span class="card-text" style="font-size: 35px">{{ cocktail.drinks[0].strInstructions }}</span><br><br>
+                    <span class="card-text" style="font-size: 35px">{{ cocktail.drinks[0].strIngredient1 }}</span>
+                    <span class="card-text" style="font-size: 35px">{{ cocktail.drinks[0].strIngredient2 }}</span>
+                    <span class="card-text" style="font-size: 35px">{{ cocktail.drinks[0].strIngredient3 }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
