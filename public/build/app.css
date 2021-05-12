@@ -21,12 +21,13 @@ p {
 }
 
 #talkbubble {
-    background: rgb(250, 249, 249);
+    background: white;
     position: relative;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
     margin: 20px;
+    padding-top: 2vw;
 }
 
 #talkbubble:before {
@@ -37,4 +38,12 @@ p {
     border-top: 13px solid transparent;
     border-right: 26px solid white;
     border-bottom: 13px solid transparent;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+.email-Mess {
+    font-style: italic;
 }
