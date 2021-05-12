@@ -38,7 +38,6 @@ class ContactController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($contact);
             $entityManager->flush();
-
             return $this->redirectToRoute('contact_index');
         }
 
