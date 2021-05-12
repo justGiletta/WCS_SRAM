@@ -19,6 +19,12 @@ class CallApiService
             'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=PM8NUDxIhFiuh7BLm7exY0pyNAWrkADo7OcFXbLL');
         return $response->toArray();
     }
-
+    public function getApiCocktail() : array
+    {
+        $response = $this ->client ->request(
+            'GET',
+            'https://www.thecocktaildb.com/api/json/v1/1/random.php');
+        return $response->toArray();
+    }
 
 }
