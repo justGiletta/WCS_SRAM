@@ -1,21 +1,40 @@
 body {
-  background-image: url("../build/images/fond.png");
-  font-family: "Concert One", cursive;
+    background-image: url("../build/images/fond.png");
+    font-family: "Concert One", cursive;
 }
 
 h1,
 h2 {
-  font-family: "Fascinate", cursive;
-  color: white;
+    font-family: "Fascinate", cursive;
+    color: white;
 }
 
 table,
 td,
 a,
 th {
-  color: white;
+    color: white;
 }
 
 p {
-  color: white;
+    color: white;
+}
+
+#talkbubble {
+    background: rgb(250, 249, 249);
+    position: relative;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#talkbubble:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 26px;
+    border-top: 13px solid transparent;
+    border-right: 26px solid white;
+    border-bottom: 13px solid transparent;
 }
