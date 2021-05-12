@@ -8,26 +8,25 @@
     <h1 class="text-center mb-5">Agenda des sorties</h1>
     {% for sortie in sorties %}
         <div class="card" style="width: 18rem;">
-            <img src="./build/images/evemars3.png" class="card-img-top" alt="...">
+            <img src="../build/images/evemars3.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ sortie.name }}</h5>
-                <p class="card-text">{{ sortie.description }}</p>
+                <div class="card-text">{{ sortie.description }}</div>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">{{ sortie.date ? sortie.date|date('Y-m-d H:i:s') : '' }}</li>
-                <li class="list-group-item">{{ sortie.place }}</li>
-                <li class="list-group-item">{{ sortie.participantMax }}</li>
-                <li class="list-group-item">{{ sortie.organisator }}</li>
+                <li class="list-group-item">Date : {{ sortie.date ? sortie.date|date('Y-m-d H:i:s') : '' }}</li>
+                <li class="list-group-item">Lieu : {{ sortie.place }}</li>
+                <li class="list-group-item">Participants : {{ sortie.participantMax }}</li>
+                <li class="list-group-item">Organisateur : {{ sortie.organisator }}</li>
             </ul>
             <div class="card-body">
-                <a href="{{ path('sortie_show', {'id': sortie.id}) }}">Détails</a>
-                <a href="{{ path('sortie_edit', {'id': sortie.id}) }}">Modifier</a>
+                <a href="{{ path('sortie_show', {'id': sortie.id}) }}"><button class="btn btn-outline-secondary">Détails</button></a>
             </div>
         </div>
     {% else %}
         <p>Il n'y a aucune sortie organisée pour le moment.</p>
     {% endfor %}
-    <div class="d-flex justify-content-end mt-5">
+    <div class="d-flex justify-content-end mt-5 mb-5">
         <a href="{{ path('sortie_new')}}"><button type="button" class="btn btn-warning">Organiser une sortie</button></a>
     </div>
 {% endblock %}
