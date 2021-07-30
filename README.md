@@ -1,12 +1,15 @@
-Welcome to SRAM 👋
+## Welcome to SRAM 👋
 SRAM is a school project, result of a 24-hour hackathon. Theam: Mars! This project won the first place for using Symfony when the framework was not yet known by wilders...
 
 Usage
+```php
 composer install
 yarn install
 yarn encore dev
 symfony server:start
-Author
+```
+
+## Author
 👤 Wilders from Wild Code School
 
 Github: @YannisB81
